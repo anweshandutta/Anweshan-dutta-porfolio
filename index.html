@@ -1,0 +1,603 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anweshan Dutta | Assistant Registrar (Quality & Compliance)</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#090b12;
+    --bg2:#111827;
+    --card:rgba(255,255,255,0.06);
+    --gold:#d4af37;
+    --gold-light:#f7d774;
+    --text:#f4f4f4;
+    --muted:#b6bcc8;
+    --border:rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#05070d,#111827,#0a1324);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,var(--gold),transparent 70%);
+    opacity:0.05;
+    top:-250px;
+    right:-200px;
+    pointer-events:none;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    background:rgba(0,0,0,0.35);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-container{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+}
+
+.logo{
+    color:var(--gold);
+    font-size:1.3rem;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-content{
+    text-align:center;
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:10px;
+    background:linear-gradient(to right,#ffffff,#d4af37);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero h2{
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+.hero p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn{
+    padding:14px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+    display:inline-block;
+    margin:10px;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:black;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--gold);
+    color:var(--gold);
+}
+
+.btn-outline:hover{
+    background:var(--gold);
+    color:black;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--gold);
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+.glass-card{
+    background:var(--card);
+    backdrop-filter:blur(18px);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    padding:25px;
+    border-radius:15px;
+    background:var(--card);
+    border:1px solid var(--border);
+    transition:.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+}
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::after{
+    content:'';
+    position:absolute;
+    width:3px;
+    background:var(--gold);
+    top:0;
+    bottom:0;
+    left:50%;
+}
+
+.timeline-item{
+    width:50%;
+    padding:20px 40px;
+    position:relative;
+}
+
+.timeline-item:nth-child(odd){
+    left:0;
+    text-align:right;
+}
+
+.timeline-item:nth-child(even){
+    left:50%;
+}
+
+.timeline-content{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    border:1px solid var(--border);
+}
+
+.timeline-item::before{
+    content:'';
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:var(--gold);
+    border-radius:50%;
+    top:35px;
+    z-index:1;
+}
+
+.timeline-item:nth-child(odd)::before{
+    right:-10px;
+}
+
+.timeline-item:nth-child(even)::before{
+    left:-9px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.contact-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:25px;
+    border-radius:15px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.timeline::after{
+    left:20px;
+}
+
+.timeline-item{
+    width:100%;
+    padding-left:60px;
+    padding-right:20px;
+    left:0 !important;
+    text-align:left !important;
+}
+
+.timeline-item::before{
+    left:12px !important;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+<div class="logo">ANWESHAN DUTTA</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#experience">Career</a>
+<a href="#expertise">Expertise</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content fade">
+
+<h1>Anweshan Dutta</h1>
+
+<h2>Assistant Registrar (Quality & Compliance)</h2>
+
+<p>
+Quality Assurance • Regulatory Compliance • Accreditation Strategy • Academic Governance • Institutional Excellence
+</p>
+
+<p>
+Transforming regulatory requirements into sustainable systems of quality, governance, academic excellence, and institutional growth.
+</p>
+
+<a href="#contact" class="btn btn-primary">Contact Me</a>
+<a href="#experience" class="btn btn-outline">View Career</a>
+
+</div>
+</section>
+
+<section id="about">
+
+<div class="section-title fade">
+<h2>About Me</h2>
+<p>Academic Administrator | Compliance Professional | Quality Strategist</p>
+</div>
+
+<div class="about-grid">
+
+<div class="glass-card fade">
+
+<h3>Professional Profile</h3>
+<br>
+
+<p>
+Currently serving as Assistant Registrar (Quality & Compliance) at Medhavi Skills University, leading initiatives related to quality assurance, regulatory compliance, accreditation readiness, academic governance, audits, documentation systems, IQAC frameworks, and institutional excellence.
+</p>
+
+<br>
+
+<p>
+With experience across higher education, healthcare management, NAAC accreditation, curriculum governance, and public health education, I bring a multidisciplinary approach to quality and compliance.
+</p>
+
+</div>
+
+<div class="glass-card fade">
+
+<h3>Current Focus Areas</h3>
+<br>
+
+<ul>
+<li>UGC Compliance</li>
+<li>NAAC Accreditation</li>
+<li>NIRF Coordination</li>
+<li>IQAC Systems</li>
+<li>Board of Studies Governance</li>
+<li>Academic Council Documentation</li>
+<li>Quality Audits</li>
+<li>Institutional Data Management</li>
+<li>Policy Implementation</li>
+<li>Continuous Improvement Projects</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="expertise">
+
+<div class="section-title fade">
+<h2>Core Expertise</h2>
+</div>
+
+<div class="skills">
+
+<div class="skill-card fade">
+<h3>Regulatory Compliance</h3>
+<p>UGC, NCVET, Government Regulations, Academic Governance.</p>
+</div>
+
+<div class="skill-card fade">
+<h3>Accreditation & Rankings</h3>
+<p>NAAC, NIRF, NBA, QS and Institutional Preparedness.</p>
+</div>
+
+<div class="skill-card fade">
+<h3>Quality Assurance</h3>
+<p>IQAC, SOPs, Audits, Evidence Repositories and Monitoring.</p>
+</div>
+
+<div class="skill-card fade">
+<h3>Documentation Systems</h3>
+<p>Program Files, BOS Records, Academic Council Records and MoUs.</p>
+</div>
+
+<div class="skill-card fade">
+<h3>Healthcare Management</h3>
+<p>Hospital Operations, Quality Assurance and Public Health.</p>
+</div>
+
+<div class="skill-card fade">
+<h3>Academic Administration</h3>
+<p>Curriculum Governance, Faculty Coordination and Compliance Frameworks.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<div class="section-title fade">
+<h2>Career Journey</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item fade">
+<div class="timeline-content">
+<h3>Assistant Registrar</h3>
+<h4>Medhavi Skills University</h4>
+<p>Quality & Compliance | 2026 – Present</p>
+</div>
+</div>
+
+<div class="timeline-item fade">
+<div class="timeline-content">
+<h3>Assistant Professor & NAAC Coordinator</h3>
+<h4>The Neotia University</h4>
+<p>2024 – 2026</p>
+</div>
+</div>
+
+<div class="timeline-item fade">
+<div class="timeline-content">
+<h3>Assistant Professor</h3>
+<h4>NSHM Knowledge Campus</h4>
+<p>2022 – 2024</p>
+</div>
+</div>
+
+<div class="timeline-item fade">
+<div class="timeline-content">
+<h3>Management Trainee</h3>
+<h4>KPC Medical College & Hospital</h4>
+<p>2022</p>
+</div>
+</div>
+
+<div class="timeline-item fade">
+<div class="timeline-content">
+<h3>Sales & Marketing Intern</h3>
+<h4>Chanakya Mental Health Services</h4>
+<p>2021</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<div class="section-title fade">
+<h2>Education & Research</h2>
+</div>
+
+<div class="about-grid">
+
+<div class="glass-card fade">
+<h3>MBA</h3>
+<p>Healthcare & Hospital Management</p>
+<p>IISWBM, University of Calcutta</p>
+</div>
+
+<div class="glass-card fade">
+<h3>B.Sc. Anthropology (Hons.)</h3>
+<p>Narasinha Dutt College</p>
+<p>University of Calcutta</p>
+</div>
+
+</div>
+
+<br><br>
+
+<div class="glass-card fade">
+
+<h3>Research Experience</h3>
+
+<br>
+
+<p>Field Research on Tribal Communities of Pakhirala, Sundarbans.</p>
+<br>
+<p>Stratigraphic Layer Research at Bolpur, Shantiniketan.</p>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="section-title fade">
+<h2>Get In Touch</h2>
+</div>
+
+<div class="contact-info">
+
+<div class="contact-card fade">
+<h3>Email</h3>
+<p>anweshanbio007@gmail.com</p>
+</div>
+
+<div class="contact-card fade">
+<h3>Phone</h3>
+<p>+91 8240837857</p>
+</div>
+
+<div class="contact-card fade">
+<h3>Location</h3>
+<p>Howrah, West Bengal, India</p>
+</div>
+
+<div class="contact-card fade">
+<h3>LinkedIn</h3>
+<p>
+<a href="https://www.linkedin.com/in/anweshan-dutta-84b7811b8" target="_blank" style="color:#d4af37;">
+View Profile
+</a>
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Anweshan Dutta | Assistant Registrar (Quality & Compliance)
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+
+});
+
+},{threshold:0.15});
+
+document.querySelectorAll('.fade').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
+```
