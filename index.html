@@ -10,13 +10,20 @@
 
 <style>
 .profile-image{
-    width:220px;
-    height:220px;
+    width:250px;
+    height:250px;
     object-fit:cover;
     border-radius:50%;
-    border:4px solid #d4af37;
-    margin-bottom:25px;
-    box-shadow:0 0 30px rgba(212,175,55,0.4);
+    border:5px solid #d4af37;
+    margin-bottom:30px;
+    box-shadow:
+        0 0 20px rgba(212,175,55,0.4),
+        0 0 50px rgba(212,175,55,0.2);
+    transition:0.4s ease;
+}
+
+.profile-image:hover{
+    transform:scale(1.03);
 }
 :root{
     --bg:#090b12;
@@ -329,43 +336,22 @@ footer{
 
 <body>
 
-<nav>
-<div class="nav-container">
-<div class="logo">ANWESHAN DUTTA</div>
+.profile-image{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #d4af37;
+    margin-bottom:30px;
+    box-shadow:
+        0 0 20px rgba(212,175,55,0.4),
+        0 0 50px rgba(212,175,55,0.2);
+    transition:0.4s ease;
+}
 
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#experience">Career</a>
-<a href="#expertise">Expertise</a>
-<a href="#education">Education</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
-</nav>
-
-<div class="hero-content fade">
-
-<img src="profile.jpg" alt="Anweshan Dutta" class="profile-image">
-
-<h1>Anweshan Dutta</h1>
-
-<h1>Anweshan Dutta</h1>
-
-<h2>Assistant Registrar (Quality & Compliance)</h2>
-
-<p>
-Quality Assurance • Regulatory Compliance • Accreditation Strategy • Academic Governance • Institutional Excellence
-</p>
-
-<p>
-Transforming regulatory requirements into sustainable systems of quality, governance, academic excellence, and institutional growth.
-</p>
-
-<a href="#contact" class="btn btn-primary">Contact Me</a>
-<a href="#experience" class="btn btn-outline">View Career</a>
-
-</div>
-</section>
+.profile-image:hover{
+    transform:scale(1.03);
+}
 
 <section id="about">
 
